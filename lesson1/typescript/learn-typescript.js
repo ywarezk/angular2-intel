@@ -1,4 +1,5 @@
 // import * as constants from './const';
+// import {GREETING} from './const';
 // let person : Pokemon = {
 //     name: 'yariv',
 //     age: 31

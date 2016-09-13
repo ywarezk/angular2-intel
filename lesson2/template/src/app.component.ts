@@ -3,6 +3,7 @@
  */
 
 import {Component} from '@angular/core';
+import {Task, TaskService} from './services/task.service.ts';
 
 @Component({
     selector: 'app',
@@ -20,7 +21,7 @@ export class AppComponent{
     exampleTwoWay : string = 'hello world';
     passToGreeting : string = 'im passing variable from parent to greeting';
 
-    items = {hello: 'world', type: 'foo'};
+    items = ['fruit', 'banana'];
 
     ifExample : boolean = false;
     classExample : any = {
@@ -46,5 +47,21 @@ export class AppComponent{
         this.ifExample = !this.ifExample;
         this.classExample['btn-primary'] = !this.classExample['btn-primary'];
     }
+
+
+
+
+
+    //tasks exercise
+    tasks : Array<Task>;
+    constructor(private _taskService : TaskService){
+        this.tasks = _taskService.getTasks();
+    }
+
+
+
+
+
+
 
 }

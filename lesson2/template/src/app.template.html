@@ -69,7 +69,20 @@ template for the app component
     NgFor
 </h3>
 <ol>
-    <li *ngFor="let item of items.keys();let i = index;">
-        {{i}}
+    <li *ngFor="let item of items;let i = index;">
+        {{i}} {{item}}
     </li>
 </ol>
+
+<h2>
+    Tasks Exercise
+</h2>
+<div>
+
+    <div *ngFor="let task of tasks">
+        <single-task [task]="task">
+
+        </single-task>
+    </div>
+
+</div>

@@ -1,0 +1,75 @@
+<!--
+template for the app component
+-->
+<h1>
+    Angular Templates
+</h1>
+
+<h2>Bindings</h2>
+
+<h3>Curly braces</h3>
+
+<p>
+    function print
+    {{getHelloString()}}
+</p>
+<p>
+    {{helloPokemonVariable}}
+</p>
+<p [style.color]="'red'" [innerHTML]="printHtml">
+
+</p>
+<img src="{{pikachuImage}}" />
+
+
+<button
+        [class.btn]="true"
+        [class.btn-primary]="true"
+>
+    binding to class property
+</button>
+
+<h3>
+    Binding from template to component class
+</h3>
+<button class="btn btn-primary" (click)="greetingFunction($event)">Greeting</button>
+
+<h3>
+    2 way binding
+</h3>
+
+<input [(ngModel)]="exampleTwoWay" />
+
+<h2>
+    Custom Component
+</h2>
+
+<greeting message="passToGreeting" (deleteGreeting)="deleteGreetingFromParent($event)" ></greeting>
+
+<h2>
+    Core Directives
+</h2>
+
+<h3>
+    NgClass
+</h3>
+
+<button [ngClass]="classExample" (click)="changeStyleOfButton();">
+    Hello!!!!
+</button>
+
+<h3>
+    NgIf
+</h3>
+<div *ngIf="ifExample" class="alert alert-danger">
+    Example of ngIf
+</div>
+
+<h3>
+    NgFor
+</h3>
+<ol>
+    <li *ngFor="let item of items.keys();let i = index;">
+        {{i}}
+    </li>
+</ol>

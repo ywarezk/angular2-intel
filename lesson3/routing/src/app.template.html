@@ -1,0 +1,30 @@
+<!--
+template for the app component
+-->
+
+<h1>
+    Navigation bar
+</h1>
+<nav>
+    <ul>
+        <li [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+            <a [routerLink]="'/'">Home</a>
+        </li>
+        <li [routerLinkActive]="'active'">
+            <a [routerLink]="'/about'">About</a>
+        </li>
+        <li [routerLinkActive]="'active'">
+            <a [routerLink]="'/about'" [queryParams]="{'company': 'intel'}" [fragment]="'yariv'">special about</a>
+        </li>
+        <li [routerLinkActive]="'active'">
+            <a [routerLink]="'/about/10'">about with id</a>
+        </li>
+    </ul>
+</nav>
+
+<router-outlet></router-outlet>
+
+
+
+
+

@@ -40,3 +40,74 @@ template for the app component
     </button>
 </form>
 
+<h1>
+    Task Form
+</h1>
+
+<form #taskForm="ngForm" (ngSubmit)="createTask()">
+    <label>
+        title
+    </label>
+    <input
+            name="title"
+            [(ngModel)]="title"
+            required
+            minlength="5"
+            pattern="[a-zA-Z]+"
+            #titleControl="ngModel"
+    />
+    {{titleControl.valid}}
+    <br/>
+    <label>
+        description
+    </label>
+    <input
+            name="description"
+            [(ngModel)]="description"
+            minlength="5"
+            #descriptionControl="ngModel"
+    />
+    {{descriptionControl.valid}}
+    <br/>
+    <label>
+        group
+    </label>
+    <input
+            name="group"
+            [(ngModel)]="group"
+            required
+            maxlength="30"
+            #groupControl="ngModel"
+    />
+    {{groupControl.valid}}
+    <br/>
+    <label>
+        when
+    </label>
+    <input
+            name="when"
+            [(ngModel)]="when"
+            pattern="[0-9]{4,4}-[0-9]{2,2}-[0-9]{2,2}"
+            required
+            #whenControl="ngModel"
+    />
+    {{whenControl.valid}}
+    <br/>
+    <button type="submit" [disabled]="taskForm.invalid">
+        Submit
+    </button>
+</form>
+
+<h1>
+    List of tasks
+</h1>
+<div>
+    <ul>
+        <li *ngFor="let task of tasks">
+            {{task.title}}
+        </li>
+    </ul>
+</div>
+
+
+

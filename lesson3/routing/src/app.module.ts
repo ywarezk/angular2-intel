@@ -16,7 +16,10 @@ import {MyRoutingModule} from './app.routes.ts';
     declarations: [
         Root.AppComponent,
         Root.HomeComponent,
-        Root.AboutComponent
+        Root.AboutComponent,
+        Root.AdminComponent,
+        Root.UserComponent,
+        Root.DashboardComponent
     ],
     bootstrap: [Root.AppComponent],
     providers: [Root.TaskService]

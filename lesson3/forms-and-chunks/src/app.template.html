@@ -1,0 +1,42 @@
+<!--
+template for the app component
+-->
+<h1 #h1Object>
+    Forms recap
+</h1>
+
+<form #ngFormExample="ngForm" (ngSubmit)="submmittingForm()" >
+    {{ngFormExample.submitted}}
+    <label>UserName</label>
+    <input
+            name="username"
+            [(ngModel)]="username"
+            required
+            minlength="5"
+            pattern="[a-zA-Z]+"
+            #usernameModel="ngModel"
+    />
+    <p>
+        <strong>
+            Valid:
+        </strong>
+        {{usernameModel.valid}}
+    </p>
+    <p>
+        <strong>
+            Dirty:
+        </strong>
+        {{usernameModel.dirty}}
+    </p>
+    <p>
+        <strong>
+            Touched:
+        </strong>
+        {{usernameModel.touched}}
+    </p>
+
+    <button type="submit" [disabled]="!ngFormExample.valid">
+        Submit
+    </button>
+</form>
+

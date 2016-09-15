@@ -1,0 +1,46 @@
+<!--
+template for the app component
+-->
+<h1>
+    Angular Forms
+</h1>
+
+<h2 #h2Dom >
+    Basic form
+</h2>
+{{h2Dom.innerHTML}}
+<div>
+    <form class="form-horizontal" #myForm="ngForm">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input
+                    name="username"
+                    [(ngModel)]="username"
+                    class="form-control"
+                    minlength="5"
+                    #userInput="ngModel"
+                    id="username"/>
+            <div class="alert alert-danger" *ngIf="userInput.dirty && !userInput.valid" >
+                You must enter more then 5 letters
+            </div>
+            <button class="btn btn-primary" type="submit" [disabled]="!myForm.valid">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
+
+<h2>
+    Password form
+</h2>
+<form [formGroup]="passwordForm">
+    <label>password</label>
+    <input name="password" [formControl]="passwordControl" />
+    <br/>
+    <label>repeat</label>
+    <input name="repeat" [formControl]="passwordControl" />
+    <div class="alert alert-danger" *ngIf="!passwordForm.valid">
+        not match
+    </div>
+</form>
+
